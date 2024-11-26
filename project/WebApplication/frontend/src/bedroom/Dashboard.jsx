@@ -7,15 +7,6 @@ import './Dashboard.css';
 const Dashboard = () => {
   const [recentBedrooms, setRecentBedrooms] = useState([]);
   const navigate = useNavigate();
-  const handleLogout = () => {
-    // Remove the token from local storage
-    localStorage.removeItem('token');
-    navigate('/login');
-  };
-
-  const handleLogoClick = () => {
-    navigate('/dashboard');
-  };
 
   useEffect(() => {
     // Fetch recent items from the backend
@@ -41,9 +32,16 @@ const Dashboard = () => {
   const handleModifyBedroom = (bedroomId) => {
     navigate(`/bedroom/modify/${bedroomId}`); // Navigate to the Modify Bedroom page
   };
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Remove token from localStorage
+    navigate('/login'); // Redirect to login page
+  };
 
   return (
       <div className="dashboard-container">
+        <button className="logout-button" onClick={handleLogout}>
+          Log Out
+        </button>
         <aside className="sidebar">
           <h2>Dashboard</h2>
           <div className="input-create-bedroom">

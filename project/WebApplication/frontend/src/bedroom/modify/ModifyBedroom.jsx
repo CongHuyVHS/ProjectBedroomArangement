@@ -46,7 +46,10 @@ const ModifyBedroom = () => {
       setMessage('Failed to update bedroom.');
     }
   };
-
+    const handleLogout = () => {
+    localStorage.removeItem('token'); // Remove token from localStorage
+    navigate('/login'); // Redirect to login page
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setBedroomData({
@@ -66,80 +69,86 @@ const ModifyBedroom = () => {
   }
 
   return (
-    <div className={'modify-bedroom-container'}>
-      <div className={'modify-bedroom-header'}>
-        <h1>Modify Bedroom</h1>
-      </div>
-      {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <div className={'input-box'}>
-          <label>
-            Bedroom Name:
-            <input
-                type="text"
-                name="name"
-                className={'input-field'}
-                value={bedroomData.name || ''}
-                onChange={handleChange}
-                required
-            />
-          </label>
-          <br />
-          <label>
-            Width (feet):
-            <input
-                type="number"
-                name="width"
-                className={'input-field'}
-                value={bedroomData.size.width || ''}
-                onChange={handleChange}
-                required
-            />
-          </label>
-          <br />
-          <label>
-            Length (feet):
-            <input
-                type="number"
-                name="length"
-                className={'input-field'}
-                value={bedroomData.size.length || ''}
-                onChange={handleChange}
-                required
-            />
-          </label>
-          <br />
-          <label>
-            Height (feet):
-            <input
-                type="number"
-                name="height"
-                className={'input-field'}
-                value={bedroomData.size.height || ''}
-                onChange={handleChange}
-                required
-            />
-          </label>
-          <br />
-          <label>
-            Free Space Percentage (%):
-            <input
-                type="number"
-                name="freeSpacePercentage"
-                className={'input-field'}
-                max="100"
-                value={bedroomData.freeSpacePercentage || ''}
-                onChange={handleChange}
-                required
-            />
-          </label>
-          <br />
-          <div className="input-submit">
-            <button type="submit" className="submit-btn">Save Bedroom</button>
-          </div>
+      <div className={'modify-bedroom-container'}>
+        <button className="back-arrow" onClick={() => navigate('/dashboard')}>
+          &#8592; Back
+        </button>
+        <button className="logout-button" onClick={handleLogout}>
+          Log Out
+        </button>
+        <div className={'modify-bedroom-header'}>
+          <h1>Modify Bedroom</h1>
         </div>
-      </form>
-    </div>
+        {message && <p>{message}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className={'input-box'}>
+            <label>
+              Bedroom Name:
+              <input
+                  type="text"
+                  name="name"
+                  className={'input-field'}
+                  value={bedroomData.name || ''}
+                  onChange={handleChange}
+                  required
+              />
+            </label>
+            <br/>
+            <label>
+              Width (feet):
+              <input
+                  type="number"
+                  name="width"
+                  className={'input-field'}
+                  value={bedroomData.size.width || ''}
+                  onChange={handleChange}
+                  required
+              />
+            </label>
+            <br/>
+            <label>
+              Length (feet):
+              <input
+                  type="number"
+                  name="length"
+                  className={'input-field'}
+                  value={bedroomData.size.length || ''}
+                  onChange={handleChange}
+                  required
+              />
+            </label>
+            <br/>
+            <label>
+              Height (feet):
+              <input
+                  type="number"
+                  name="height"
+                  className={'input-field'}
+                  value={bedroomData.size.height || ''}
+                  onChange={handleChange}
+                  required
+              />
+            </label>
+            <br/>
+            <label>
+              Free Space Percentage (%):
+              <input
+                  type="number"
+                  name="freeSpacePercentage"
+                  className={'input-field'}
+                  max="100"
+                  value={bedroomData.freeSpacePercentage || ''}
+                  onChange={handleChange}
+                  required
+              />
+            </label>
+            <br/>
+            <div className="input-submit">
+              <button type="submit" className="submit-btn">Save Bedroom</button>
+            </div>
+          </div>
+        </form>
+      </div>
   );
 };
 
