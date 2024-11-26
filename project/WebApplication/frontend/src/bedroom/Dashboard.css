@@ -1,0 +1,206 @@
+/* dashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #dfdfdf;
+}
+
+.dashboard-container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background: #333;
+  color: #fff;
+  padding: 30px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+
+}
+.input-create-bedroom{
+    position: relative;
+}
+
+.input-create-bedroom {
+  position: relative;
+}
+
+.create-bedroom-button {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.create-bedroom-button:hover {
+  background: #444; /* Change color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.create-bedroom-button:active {
+  transform: scale(0.95); /* Shrink slightly on click */
+}
+
+.create-bedroom-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.create-bedroom-button:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+}
+
+
+.input-create-bedroom label{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    font-size: 0.9rem;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+
+.sidebar h2 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+
+}
+
+.content h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.recent-items ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-items li {
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.recent-items h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+
+.modify-bedroom-button{
+
+    width: 50%;
+    height: 25px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+.modify-bedroom-button {
+  position: relative;
+  width: 50%; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modify-bedroom-button:hover {
+  background: #444; /* Change to a lighter shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.modify-bedroom-button:active {
+  transform: scale(0.95); /* Slightly shrink when clicked */
+}
+
+.modify-bedroom-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.modify-bedroom-button:active::after {
+  width: 200px; /* Ripple size */
+  height: 200px; /* Ripple size */
+  opacity: 0;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+}
+
+

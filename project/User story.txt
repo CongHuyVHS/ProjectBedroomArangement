@@ -1,0 +1,77 @@
+User story:
+
+
+- user input (add,modify,delete) 
+	. room dimension
+ 	. bed type: single, double, queen, king and number of bed 
+	. number of person 
+	. drawer type: 3, 4 and number of drawer  
+	. closet:size (s,m,l)
+	. night stand : with/without drawer 
+	. office table: size(s,m,l)
+	. Percentage of free space 
+	. room door placement and size
+	. window placement and size 
+	. in-room wardrobe placement and size 
+	
+
+- user account management 
+	. account create
+	. account delete 
+	. unlock/lock account 
+	. User licenses (free version(limit)/pay version)
+	. username/password management:
+		. username duplication check
+		. password validation
+		. number of log in tries (10 times)   
+	. user information save/load
+	. change password 
+	. bedroom name
+	. reset password
+	. session timer with auto-save(30min)
+	. (optional) user fee 
+- database management: 
+	. database schema setup 
+	. user information storage 
+	. user information retrieval 
+	. user information delete 
+
+- calculate room space with furniture
+	. Validate user input 
+	.  Check user input completeness 
+	.  determine if all furniture could fit: 
+		. calculate furniture volume
+		. calculate room volume 
+		. taking account the constraint from doors, window, wardrobe door, etc.
+		. iterate over furniture placement to find the best fit
+	. if fit: 
+		. ask user input for furniture upgrade
+		. ask user input for more furniture   
+	.  if not fit: 
+		. ask user input for furniture resize(ex: bed size)
+		. ask user input for furniture type change (ex: bed --> loft bed or bed with drawer)
+		. ask user input to remove furniture 
+		. ask user input to change the free space 
+	. define the logic to fit all of the furniture
+
+- show final arrangement to user : 
+	. Output final result (with text)
+	. Show graphically the result (with image)
+	. Include free space 
+	. Include distance between furniture 
+	. (optional) Propose extra furniture or decoration(plant, etc.)
+
+
+- get user feedback: 
+	. (optional) ask for furniture placement preference (ex: bed close to window, office window facing the window, etc.) 
+
+- (optional) regenerate room arrangement base on user preference
+
+
+
+
+
+
+
+
+
